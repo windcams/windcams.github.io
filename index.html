@@ -19,7 +19,7 @@
             function replaceSrc(){
                 var date = (new Date(Date.now() - 10 * 60 * 60 * 1000)).toISOString().slice(0,10); // Minus 10 hours
                 document.getElementById('tide_img').src="http://www.iwindsurf.com/cgi-bin/tideGraph.gif?tideSiteName=Oyster%20Point%20Marina%2C%20San%20Francisco%20Bay%2C%20California&beginTime="+date+"%206:00&endTime=2019-01-01%2023:00";
-                document.getElementById('alameda_img').src = "https://boardsportscalifornia.com/wp-content/uploads/2010/03/webcam.jpg?d=" + Date.now();
+                document.getElementById('alameda_img').src = "https://boardsportscalifornia.com/boardsportscalifornia.com/alamedacam.jpg?" + Date.now();
                 document.getElementById('coyote_img').src = "https://boardsportscalifornia.com/coyotecam/webcam.jpg?d=" + Date.now();
             }
             window.onload = replaceSrc;
