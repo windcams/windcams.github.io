@@ -19,8 +19,12 @@
             function replaceSrc(){
                 var date = (new Date(Date.now() - 10 * 60 * 60 * 1000)).toISOString().slice(0,10); // Minus 10 hours
                 document.getElementById('tide_img').src="http://www.iwindsurf.com/cgi-bin/tideGraph.gif?tideSiteName=Oyster%20Point%20Marina%2C%20San%20Francisco%20Bay%2C%20California&beginTime="+date+"%206:00&endTime=2019-01-01%2023:00";
-                document.getElementById('alameda_img').src = "https://boardsportscalifornia.com/boardsportscalifornia.com/alamedacam.jpg?" + Date.now();
-                document.getElementById('coyote_img').src = "https://boardsportscalifornia.com/coyotecam/webcam.jpg?d=" + Date.now();
+                var alameda_img_link = "https://boardsportscalifornia.com/boardsportscalifornia.com/alamedacam.jpg?" + Date.now();
+                document.getElementById('alameda_img').src = alameda_img_link;
+                document.getElementById('alameda_link').href = alameda_img_link;
+                var coyote_img_link = "https://boardsportscalifornia.com/coyotecam/webcam.jpg?d=" + Date.now();
+                document.getElementById('coyote_img').src = coyote_img_link;
+                document.getElementById('coyote_link').href = coyote_img_link;
             }
             window.onload = replaceSrc;
         </script>
@@ -63,8 +67,8 @@
         <br>
 
         Cams:<br>
-        <a href=https://boardsportscalifornia.com/wp-content/uploads/2010/03/webcam.jpg target="_blank"><img id="alameda_img" src="" title="Alameda"></a>
-        <a href=https://boardsportscalifornia.com/coyotecam/webcam.jpg target="_blank"><img id="coyote_img" src="" title="Coyote"></a>
+        <a target="_blank" id="alameda_link"><img id="alameda_img" src="" title="Alameda"></a>
+        <a target="_blank" id="coyote_link"><img id="coyote_img" src="" title="Coyote"></a>
         <a href=http://arbor-studios.com/images/3rdave-uplaunch.jpg target="_blank"><img src=http://arbor-studios.com/images/3rdave-uplaunch.jpg title="3rd ave uplaunch"></a>
         <a href=http://arbor-studios.com/images/3rdave-flag.jpg target="_blank"><img src=http://arbor-studios.com/images/3rdave-flag.jpg title="3rd ave rigging area"></a>
         <a href=http://arbor-studios.com/images/3rdave-wide.jpg target="_blank"><img src=http://arbor-studios.com/images/3rdave-wide.jpg title="3rd ave wide"></a>
