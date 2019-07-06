@@ -17,12 +17,14 @@
         <script type="text/javascript">
             // Force reload on some of images
             function replaceSrc(){
-                var date = (new Date(Date.now() - 10 * 60 * 60 * 1000)).toISOString().slice(0,10); // Minus 10 hours for the tide graph
-                document.getElementById('tide_img').src="http://www.iwindsurf.com/cgi-bin/tideGraph.gif?tideSiteName=Oyster%20Point%20Marina%2C%20San%20Francisco%20Bay%2C%20California&beginTime="+date+"%206:00&endTime=2019-01-01%2023:00";
-                var alameda_img_link = "https://boardsportscalifornia.com/boardsportscalifornia.com/alamedacam.jpg?" + Date.now();
+                var now = Date.now();
+                var begin_date = (new Date(now - 10 * 60 * 60 * 1000)).toISOString().slice(0,10); // Minus 10 hours for the tide graph
+                var end_date = (new Date(now)).toISOString().slice(0,10);
+                document.getElementById('tide_img').src="http://www.iwindsurf.com/cgi-bin/tideGraph.gif?tideSiteName=Oyster%20Point%20Marina%2C%20San%20Francisco%20Bay%2C%20California&beginTime="+begin_date+"%206:00&endTime="+end_date+"%2023:00";
+                var alameda_img_link = "https://boardsportscalifornia.com/boardsportscalifornia.com/alamedacam.jpg?" + now;
                 document.getElementById('alameda_img').src = alameda_img_link;
                 document.getElementById('alameda_link').href = alameda_img_link;
-                var coyote_img_link = "https://boardsportscalifornia.com/boardsportscalifornia.com/coyotecam.jpg?" + Date.now();
+                var coyote_img_link = "https://boardsportscalifornia.com/boardsportscalifornia.com/coyotecam.jpg?" + now;
                 document.getElementById('coyote_img').src = coyote_img_link;
                 document.getElementById('coyote_link').href = coyote_img_link;
             }
